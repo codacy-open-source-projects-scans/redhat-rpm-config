@@ -136,6 +136,13 @@ while IFS= read -r line; do
     continue
   fi
 
+  if [ -n "$exclude_shebangs" ]; then
+    echo "$shebang" | grep -q -E "$exclude_shebangs" && continue
+  fi
+  if [ -n "$exclude_shebangs_from" ]; then
+    echo "$shebang" | grep -q -E -f "$exclude_shebangs_from" && continue
+  fi
+
   # Replace "special" env shebang:
   # /whatsoever/env -whatever /whatever/foo → /whatever/foo
   shebang=$(echo "$shebang" | sed -r -e 's@^(.+)/env( -[^ ]+)* /(.+)$@/\3@')
