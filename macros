@@ -358,7 +358,7 @@ for k,_ in pairs(stripped_flags) do print(k .. " ") end
 %_annotation_ldflags	%{?_lto_cflags:%{_annotation_cflags}}
 # Use the remove-section option to force the find-debuginfo script
 # to move the annobin notes into the separate debuginfo file.
-%_find_debuginfo_extra_opts %{?_annotated_build:--remove-section .gnu.build.attributes}
+%_find_debuginfo_vendor_opts %{?_annotated_build:--remove-section .gnu.build.attributes}
 
 # Include frame pointer information by default, except on RHEL 10 and earlier
 # On RHEL 11, we are enabling it for now, with the possibility of revoking it
