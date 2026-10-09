@@ -8,7 +8,7 @@ Name: redhat-rpm-config
 # If the branches haven't diverged yet, keep the Fedora release number from
 # the older branch. When the branch diverges, bump the Version to the Fedora
 # release number.
-Version: 344
+Version: 345
 Release: %autorelease
 # config.guess, config.sub are GPL-3.0-or-later WITH Autoconf-exception-generic
 License: GPL-1.0-or-later AND GPL-2.0-or-later AND GPL-3.0-or-later WITH Autoconf-exception-generic
@@ -93,11 +93,13 @@ Requires: cmake-srpm-macros
 Requires: fonts-srpm-macros
 # ↓ Provides macros.forge and forge.lua originally shipped by us
 Requires: forge-srpm-macros
+Requires: gnome-srpm-macros
 Requires: go-srpm-macros
 Requires: java-srpm-macros
 # ↓ Provides kmod.attr originally shipped by us
 Requires: kernel-srpm-macros >= 1.0-12
 Requires: lua-srpm-macros
+Requires: meson-srpm-macros
 Requires: ocaml-srpm-macros
 Requires: openblas-srpm-macros
 Requires: perl-srpm-macros
